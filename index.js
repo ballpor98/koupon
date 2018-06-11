@@ -7,19 +7,11 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .post('/',(req, res) => res.json({ fulfillmentText: 'testkub',"fulfillmentMessages": [
+  .post('/',(req, res) => res.json(
+  { "fulfillmentText": "testkub",
+  "fulfillmentMessages": [
     {
-      "card": {
-        "title": "card title",
-        "subtitle": "card text",
-        "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
-        "buttons": [
-          {
-            "text": "button text",
-            "postback": "https://assistant.google.com/"
-          }
-        ]
-      }
-    }
-  ] }))
+      "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+      "type": 3
+    }] }))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
