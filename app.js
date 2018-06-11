@@ -1,16 +1,21 @@
-const express = require('express')
-const path = require('path')
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var helmet = require('helmet');
+var compression = require('compression');
 const PORT = process.env.PORT || 5000
 
 var obj = require("./api/send.json");
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .post('/api',(req, res) => res.json(obj))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+var app = express();
+  app.use(express.static(path.join(__dirname, 'public')))
+  app.set('views', path.join(__dirname, 'views'))
+  app.set('view engine', 'ejs')
+  app.get('/', (req, res) => res.render('pages/index'))
+  app.post('/api',(req, res) => res.json(obj))
+  app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
   /*
   {
   "line": {
