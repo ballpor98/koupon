@@ -11,3 +11,11 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .post('/',(req, res) => res.json(obj))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  /*
+  {
+  "line": {
+    "type": "image",
+    "originalContentUrl": "https://t3.ftcdn.net/jpg/01/81/28/40/240_F_181284066_9LS4Jw1O3dKAQGcmF5BWP3Oeteug7p77.jpg",
+    "previewImageUrl": "https://t3.ftcdn.net/jpg/01/81/28/40/240_F_181284066_9LS4Jw1O3dKAQGcmF5BWP3Oeteug7p77.jpg"
+  }
+}*/
