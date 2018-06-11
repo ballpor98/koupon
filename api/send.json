@@ -2,6 +2,7 @@
 "fulfillmentText": "This is a text response",
 "fulfillmentMessages":
   [
+    {"text": {"text": ["Text response"]}},
     {
     "image": {"imageUri": "http://getdrawings.com/image/tree-image-drawing-62.jpg"}
     }
