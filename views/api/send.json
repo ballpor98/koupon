@@ -1,0 +1,20 @@
+{
+  "queryText": "request coupon",
+  "action": "koupon.agent.request",
+  "fulfillmentText": "testkub",
+  "fulfillmentMessages": [
+    {
+      "text": {
+        "text": [
+          "[{\"type\":0,\"speech\":\"testkub\"}]"
+        ]
+      }
+    }
+  ],
+  "intent": {
+    "id": "71805c47-cb09-4a25-8daf-3a8845ff5ec3",
+    "displayName": "request coupon"
+  },
+  "intentDetectionConfidence": 1,
+  "languageCode": "th"
+}
