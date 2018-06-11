@@ -7,11 +7,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .post('/',(req, res) => res.json(
-  { "fulfillmentText": "testkub",
-  "fulfillmentMessages":[
-    "image": {"imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",}
-    ]}))
+  .post('/',(req, res) => res.json({ "fulfillmentText": "testkub"}))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 /*
 {
