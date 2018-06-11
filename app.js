@@ -9,14 +9,18 @@ const PORT = process.env.PORT || 5000
 
 var obj = require("./api/send.json");
 
+var indexRouter = require('./routes/index');
 var app = express();
-  app.use(express.static(path.join(__dirname, 'public')))
-  app.set('views', path.join(__dirname, 'views'))
-  app.set('view engine', 'ejs')
-  app.get('/', (req, res) => res.render('pages/index'))
-  app.post('/api',(req, res) => res.json(obj))
-  app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
-  /*
+app.use(express.static(path.join(__dirname, 'public')))
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+//app.get('/', (req, res) => res.render('pages/index'))
+app.use('/', indexRouter);
+app.post('/api', (req, res) => res.json(obj))
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+module.exports = app;
+/*
   {
   "line": {
     "type": "image",
