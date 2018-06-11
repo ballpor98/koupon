@@ -1,11 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var helmet = require('helmet');
-var compression = require('compression');
-var bodyParser = require('body-parser');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const helmet = require('helmet');
+const compression = require('compression');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const mongoose = require('mongoose');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000;
 
 var coupon = new Map();
@@ -13,6 +17,7 @@ var coupon = new Map();
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 var app = express();
+app.use(cors());
 // helmet middleware
 app.use(helmet());
 // gzip compression middleware
