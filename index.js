@@ -10,10 +10,7 @@ express()
   .post('/',(req, res) => res.json(
   { "fulfillmentText": "testkub",
   "fulfillmentMessages":[
-    "card": {
-      "imageUri":
-        "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png"
-      }
+    "image": {"imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",}
     ]}))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 /*
