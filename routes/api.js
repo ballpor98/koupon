@@ -7,7 +7,7 @@ var obj = require("../api/send.json");
 router.post('/', function(req, res, next) {
   console.log(req.body);
   let couponCode = uuidv4();
-  obj.fulfillmentMessages[0].text.text = String(couponCode);
+  obj.fulfillmentMessages[0].text.text[0] = String(couponCode);
   res.json(obj);
 });
 
