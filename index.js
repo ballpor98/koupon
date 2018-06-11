@@ -5,9 +5,10 @@ const PORT = process.env.PORT || 5000
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
+  .set('api', path.join(__dirname, 'api'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .post('/',(req, res) => res.json('api/send'))
+  .post('/',(req, res) => res.json('send'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 /*
 {
