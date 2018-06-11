@@ -2,7 +2,7 @@
 "fulfillmentText": "This is a text response",
 "fulfillmentMessages":
   [
-    {"text": {"text":"Coupon-Code"}},
+    {"text": {"text":["Coupon-Code"]}},
     {
     "image": {"imageUri": "https://t3.ftcdn.net/jpg/01/81/28/40/240_F_181284066_9LS4Jw1O3dKAQGcmF5BWP3Oeteug7p77.jpg"}
     }
