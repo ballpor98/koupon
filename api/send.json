@@ -1,3 +1,9 @@
 {
-"fulfillmentText": "This is a text response"
+"fulfillmentText": "This is a text response",
+"fulfillmentMessages":
+  [
+    {
+    "image": {"imageUri": "http://getdrawings.com/tree-image-drawing#tree-image-drawing-62.jpg"}
+    }
+  ]
 }

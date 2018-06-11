@@ -11,10 +11,3 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .post('/',(req, res) => res.json(obj))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-/*
-{
-"imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
-"type": 3
-}
-{ "fulfillmentText": "testkub"}
-*/
