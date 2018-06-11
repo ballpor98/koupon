@@ -9,7 +9,7 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .post('/',(req, res) => res.json(
   { "fulfillmentText": "testkub",
-  "fulfillmentMessages":[]}))
+  "fulfillmentMessages":["image":"https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png"]}))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 /*
 {
