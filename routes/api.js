@@ -10,9 +10,11 @@ router.post('/', function(req, res, next) {
   let couponCode = uuidv4();
   coupon[couponCode] = true;
   obj.fulfillmentMessages[0].text.text[0] = String("coupon Code: "+couponCode);
-  obj.fulfillmentMessages[1].image.imageUri = "https://kouponcoin.herokuapp.com/api/"+couponCode;
+  //toDataURL(text, [options], [cb(error, url)])
+  //obj.fulfillmentMessages[1].image.imageUri = "https://kouponcoin.herokuapp.com/api/"+couponCode;
   res.json(obj);
 });
+/*
 router.get('/:id', function(req, res) {
     var id = req.params.id
     var qrcode = req.qrcode();
@@ -24,5 +26,5 @@ router.get('/:id', function(req, res) {
     var image = qrcode.getImage();
   res.render('pages/image', { title: 'Express',img:image });
 });
-
+*/
 module.exports = router;
