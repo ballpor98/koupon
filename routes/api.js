@@ -15,6 +15,22 @@ router.post('/', function(req, res, next) {
   res.json(obj);
 });
 /*
+var opts = {
+  errorCorrectionLevel: 'H',
+  type: 'image/jpeg',
+  rendererOpts: {
+    quality: 0.3
+  }
+}
+
+QRCode.toDataURL('text', opts, function (err, url) {
+  if (err) throw err
+
+  var img = document.getElementById('image')
+  img.src = url
+})
+*/
+/*
 router.get('/:id', function(req, res) {
     var id = req.params.id
     var qrcode = req.qrcode();
