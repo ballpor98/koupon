@@ -1,5 +1,6 @@
 var express = require('express');
 const uuidv4 = require('uuid/v4');
+var QRCode = require('qrcode');
 var router = express.Router();
 
 let obj = require("../api/send.json");

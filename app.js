@@ -10,7 +10,7 @@ const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const QRCode = require('qrcode');
+
 const PORT = process.env.PORT || 5000;
 
 coupon = new Map();
@@ -19,7 +19,7 @@ var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 var app = express();
 app.use(cors());
-app.use(QRCode);
+//app.use(QRCode);
 // helmet middleware
 app.use(helmet());
 // gzip compression middleware
