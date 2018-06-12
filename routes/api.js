@@ -13,6 +13,10 @@ router.post('/', function(req, res, next) {
   //toDataURL(text, [options], [cb(error, url)])
   //obj.fulfillmentMessages[1].image.imageUri = "https://kouponcoin.herokuapp.com/api/"+couponCode;
   res.json(obj);
+  QRCode.toDataURL(couponCode, function (err, url) {
+  console.log(url)
+})
+
 });
 /*
 var opts = {
