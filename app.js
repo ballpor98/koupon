@@ -12,7 +12,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000;
 
-var coupon = new Map();
+coupon = new Map();
 
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
