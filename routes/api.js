@@ -10,8 +10,8 @@ router.post('/', function(req, res, next) {
   //console.log(req.body.queryResult.parameters['shop-name']);
   let couponCode = uuidv4();
   coupon[couponCode] = req.body.queryResult.parameters['shop-name'];
-  console.log(coupon[couponCode]);
-  obj.fulfillmentMessages[0].text.text[0] = String("couponCodeIs: "+couponCode);
+  //console.log(coupon[couponCode]);
+  obj.fulfillmentMessages[0].text.text[0] = String(coupon[couponCode]+" coupon Code: "+couponCode);
   //+req.body.parameters['shop-name']
   res.json(obj);
 });
