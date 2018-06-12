@@ -19,7 +19,7 @@ var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 var app = express();
 app.use(cors());
-app.use(QRCode;
+app.use(QRCode);
 // helmet middleware
 app.use(helmet());
 // gzip compression middleware
