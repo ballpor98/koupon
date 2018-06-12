@@ -1,5 +1,5 @@
 {
-"fulfillmentText": " coupon response",
+"fulfillmentText": "coupon response",
 "fulfillmentMessages":
   [
     {"text": {"text":["Coupon-Code"]}},
