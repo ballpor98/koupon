@@ -12,6 +12,8 @@ router.post('/', function(req, res, next) {
   coupon[couponCode] = req.body.queryResult.parameters['shop-name'];
   //console.log(coupon[couponCode]);
   obj.fulfillmentMessages[0].text.text[0] = String(coupon[couponCode]+" coupon Code: "+couponCode);
+  obj.fulfillmentText = coupon[couponCode]+obj.fulfillmentText;
+  obj.fulfillmentMessages[1].image.imageUri = "https://img.movavi.com/movavi.com.12/images/stock-photos/preview/7.png";
   //+req.body.parameters['shop-name']
   res.json(obj);
 });
