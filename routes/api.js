@@ -20,7 +20,7 @@ router.post('/', function(req, res, next) {
 
 router.get('/:id', function(req, res) {
     var id = req.params.id;
-    console.log("ID: "id);
+    console.log("ID: "+id);
   res.render(coupon[id]);
 });
 /*
