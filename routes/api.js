@@ -12,9 +12,20 @@ router.post('/', function(req, res, next) {
   coupon[couponCode] = req.body.queryResult.parameters['shop-name'];
   //console.log(coupon[couponCode]);
   obj.fulfillmentMessages[0].text.text[0] = String(coupon[couponCode]+" coupon Code: "+couponCode);
-  obj.fulfillmentMessages[1].image.imageUri = "https://img.movavi.com/movavi.com.12/images/stock-photos/preview/7.png";
+  obj.fulfillmentMessages[1].image.imageUri = "https://kouponcoin.herokuapp.com/api/"+couponCode;
   //+req.body.parameters['shop-name']
   res.json(obj);
+});
+router.get('/:id', function(req, res) {
+    var id = req.params.id
+    var qrcode = req.qrcode();
+    qrcode.setDimension(240,240);
+    qrcode.setCharset('UTF-8');
+    //qrcode.setCharset('UTF-8');
+    qrcode.setCorrectionLevel('L',0);
+    qrcode.setData(id);
+    var image = qrcode.getImage();
+  res.render('pages/image', { title: 'Express',img:image });
 });
 
 module.exports = router;
