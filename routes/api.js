@@ -5,7 +5,7 @@ var router = express.Router();
 var obj = require("../api/send.json");
 
 router.post('/', function(req, res, next) {
-  console.log(req.body.parameters);
+  console.log(req.body.queryResult.parameters);
   let couponCode = uuidv4();
   obj.fulfillmentMessages[0].text.text[0] = String("coupon"+couponCode);
   //+req.body.parameters['shop-name']
