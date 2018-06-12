@@ -1,6 +1,7 @@
 var express = require('express');
 const uuidv4 = require('uuid/v4');
 var QRCode = require('qrcode');
+var parse = require('parse-data-url');
 var router = express.Router();
 
 let obj = require("../api/send.json");
@@ -10,7 +11,7 @@ router.post('/', function(req, res, next) {
   //req.body.queryResult.parameters['shop-name']
   let couponCode = uuidv4();
   QRCode.toDataURL(couponCode, function (err, url) {
-    coupon[couponCode] = url;
+    coupon[couponCode] = parseDataUrl(url).data;
 })
   obj.fulfillmentMessages[0].text.text[0] = String("coupon Code: "+couponCode);
   //toDataURL(text, [options], [cb(error, url)])
@@ -20,8 +21,15 @@ router.post('/', function(req, res, next) {
 
 router.get('/:id', function(req, res) {
     var id = req.params.id;
-    console.log("ID: "+id);
-  res.render(coupon[id]);
+    var img = new Buffer(coupon[id], 'base64');
+
+    res.writeHead(200, {
+     'Content-Type': 'image/png',
+     'Content-Length': img.length
+    });
+    res.end(img);
+    //console.log("ID: "+id);
+  //res.render(coupon[id]);
 });
 /*
 var opts = {
