@@ -12,8 +12,9 @@ router.post('/', function(req, res, next) {
   coupon[couponCode] = req.body.queryResult.parameters['shop-name'];
   //console.log(coupon[couponCode]);
   obj.fulfillmentMessages[0].text.text[0] = String(coupon[couponCode]+" coupon Code: "+couponCode);
-  obj.fulfillmentMessages[1].image.imageUri = "https://kouponcoin.herokuapp.com/api/"+couponCode;
+  //obj.fulfillmentMessages[1].image.imageUri = "https://kouponcoin.herokuapp.com/api/"+couponCode;
   //+req.body.parameters['shop-name']
+  obj.fulfillmentMessages[1].image.imageUri = "http://chart.googleapis.com/chart?cht=qr&chs=240x240&choe=UTF-8&chld=L|0&chl=8241bd2c-a336-4ffb-8cd2-d9b90bd10467";
   res.json(obj);
 });
 router.get('/:id', function(req, res) {
