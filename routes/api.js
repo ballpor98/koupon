@@ -1,7 +1,7 @@
 var express = require('express');
 const uuidv4 = require('uuid/v4');
 var QRCode = require('qrcode');
-var parse = require('parse-data-url');
+var parseDataUrl = require('parse-data-url');
 var router = express.Router();
 
 let obj = require("../api/send.json");
