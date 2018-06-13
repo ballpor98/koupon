@@ -10,26 +10,25 @@ router.post('/', function(req, res, next) {
   //parameters
   //req.body.queryResult.parameters['shop-name']
   let couponCode = uuidv4();
-  QRCode.toDataURL(couponCode, function (err, url) {
+  QRCode.toDataURL(couponCode, function(err, url) {
     coupon[couponCode] = parseDataUrl(url).data;
-})
-  obj.fulfillmentMessages[0].text.text[0] = String("coupon Code: "+couponCode);
-  //toDataURL(text, [options], [cb(error, url)])
-  obj.fulfillmentMessages[1].image.imageUri = "https://kouponcoin.herokuapp.com/api/"+couponCode;
-  res.json(obj);
+    obj.fulfillmentMessages[0].text.text[0] = String("coupon Code: " + couponCode);
+    //toDataURL(text, [options], [cb(error, url)])
+    obj.fulfillmentMessages[1].image.imageUri = "https://kouponcoin.herokuapp.com/api/" + couponCode;
+    res.json(obj);
+  })
+
 });
 
 router.get('/:id', function(req, res) {
-    var id = req.params.id;
-    var img = new Buffer(coupon[id], 'base64');
+  var id = req.params.id;
+  var img = new Buffer(coupon[id], 'base64');
 
-    res.writeHead(200, {
-     'Content-Type': 'image/png',
-     'Content-Length': img.length
-    });
-    res.end(img);
-    //console.log("ID: "+id);
-  //res.render(coupon[id]);
+  res.writeHead(200, {
+    'Content-Type': 'image/png',
+    'Content-Length': img.length
+  });
+  res.end(img);
 });
 /*
 var opts = {
