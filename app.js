@@ -8,6 +8,7 @@ coupon = new Map();
 
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
+var echoRouter = require('./routes/echo');
 var app = express();
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 //app.post('/api', (req, res) => res.json(obj))
 app.use('/api', apiRouter);
+app.use('/echo', echoRouter);
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 module.exports = app;
